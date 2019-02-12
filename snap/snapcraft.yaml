@@ -1,5 +1,5 @@
 name: solvitaire
-version: git
+version: "master"
 summary: solitaire (klondike & spider) in your terminal
 description: |
   Supports vi style keybindings (hjkl), cursor keys and the mouse. 
@@ -15,7 +15,8 @@ confinement: strict # use 'strict' once you have the right plugs and slots
 parts:
   solvitaire:
     plugin: make
-    source: .
+    source: https://github.com/popey/solvitaire
+    source-type: git
     build-packages:
       - gcc
     override-build: |
