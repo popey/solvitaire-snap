@@ -1,0 +1,31 @@
+name: solvitaire
+version: git
+summary: solitaire (klondike & spider) in your terminal
+description: |
+  Supports vi style keybindings (hjkl), cursor keys and the mouse. 
+  Press J to 'join' a well-suited pile to the cursor. Space locks 
+  in a selection, and Return pulls cards from the stack in spider 
+  solitaire. Piles can also be directly addressed by the number 
+  below them (or 8, 9, 0 for stack, waste and foundation in klondike).
+  See $PROGNAME -h for details.
+
+grade: stable # must be 'stable' to release into candidate/stable channels
+confinement: strict # use 'strict' once you have the right plugs and slots
+
+parts:
+  solvitaire:
+    plugin: make
+    source: .
+    build-packages:
+      - gcc
+    override-build: |
+      make
+      mkdir $SNAPCRAFT_PART_INSTALL/bin
+      cp -a sol $SNAPCRAFT_PART_INSTALL/bin
+      cp -a spider $SNAPCRAFT_PART_INSTALL/bin
+
+apps:
+  sol:
+    command: sol
+  spider:
+    command: spider
