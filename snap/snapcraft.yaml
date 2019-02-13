@@ -15,7 +15,7 @@ confinement: strict # use 'strict' once you have the right plugs and slots
 parts:
   solvitaire:
     plugin: make
-    source: https://github.com/popey/solvitaire
+    source: https://github.com/girst/solvitaire
     source-type: git
     build-packages:
       - gcc
