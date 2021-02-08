@@ -1,5 +1,6 @@
 name: solvitaire
 version: "master"
+base: core20
 summary: solitaire (klondike & spider) in your terminal
 description: |
   Supports vi style keybindings (hjkl), cursor keys and the mouse. 
