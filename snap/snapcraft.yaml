@@ -24,9 +24,12 @@ parts:
       mkdir $SNAPCRAFT_PART_INSTALL/bin
       cp -a sol $SNAPCRAFT_PART_INSTALL/bin
       cp -a spider $SNAPCRAFT_PART_INSTALL/bin
+      cp -a freecell $SNAPCRAFT_PART_INSTALL/bin
 
 apps:
   sol:
     command: sol
   spider:
     command: spider
+  freecell:
+    command: freecell
